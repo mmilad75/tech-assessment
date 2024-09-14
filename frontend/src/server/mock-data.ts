@@ -6,10 +6,10 @@ import DiscordIcon from "@/assets/icons/discord.svg";
 import XIcon from "@/assets/icons/x.svg";
 import GithubIcon from "@/assets/icons/github.svg";
 import BadgeIcon from "@/assets/images/badge1.png";
-import { IActivityListItemProps } from "@/components/activity-list-item";
 import { IBadgesCarouselItem } from "@/components/badges-carousel/badges-carousel-item";
 import { IMetricItemProgressProps } from "@/components/metric-item-progress";
 import { IBadgeProps } from "@/components/badge";
+import { IActivityItem } from "@/components/last-activities";
 
 export const headerTabs: ITabButtonProps[] = [
   { text: "Dashboard", link: "" },
@@ -35,38 +35,38 @@ export const socialMedia = [
   { link: "#", Icon: GithubIcon },
 ];
 
-export const lastActivities: IActivityListItemProps[] = [
+export const lastActivities: IActivityItem[] = [
   {
     type: "transaction",
-    point: 560,
+    points: 560,
     date: "2024-09-11T00:16:08.501+00:00",
     transactionId:
       "0xfe7f346d0eadc61a7aed3953c610172a8d2c20704eb13990de0896acfdb10ca7",
   },
   {
     type: "bridged",
-    point: 560,
+    points: 560,
     date: "2024-09-11T00:16:08.501+00:00",
     transactionId:
       "0xfe7f346d0eadc61a7aed3953c610172a8d2c20704eb13990de0896acfdb10ca7",
   },
   {
     type: "bridged",
-    point: 560,
+    points: 560,
     date: "2024-09-11T00:16:08.501+00:00",
     transactionId:
       "0xfe7f346d0eadc61a7aed3953c610172a8d2c20704eb13990de0896acfdb10ca7",
   },
   {
     type: "transaction",
-    point: 560,
+    points: 560,
     date: "2024-09-11T00:16:08.501+00:00",
     transactionId:
       "0xfe7f346d0eadc61a7aed3953c610172a8d2c20704eb13990de0896acfdb10ca7",
   },
   {
     type: "transaction",
-    point: 560,
+    points: 560,
     date: "2024-09-11T00:16:08.501+00:00",
     transactionId:
       "0xfe7f346d0eadc61a7aed3953c610172a8d2c20704eb13990de0896acfdb10ca7",
