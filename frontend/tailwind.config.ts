@@ -8,6 +8,7 @@ const config: Config = {
   ],
   theme: {
     colors: {
+      transparent: "transparent",
       primary: {
         100: "var(--color-primary-disabled)",
         300: "var(--color-primary-hover)",
@@ -32,9 +33,27 @@ const config: Config = {
       error: "var(--color-error)",
       warning: "var(--color-warning)",
     },
+    spacing: {
+      "0": "0px",
+      "1": "2px",
+      "2": "4px",
+      "3": "8px",
+      "4": "12px",
+      "5": "16px",
+      "6": "24px",
+      "7": "32px",
+      "8": "40px",
+      "9": "56px",
+      "10": "112px",
+    },
     extend: {
       fontFamily: {
         sans: ["var(--font-inter)"],
+      },
+      borderRadius: {
+        content: "12px",
+        corner: "24px",
+        button: "32px",
       },
     },
   },
