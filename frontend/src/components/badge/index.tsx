@@ -9,6 +9,7 @@ export interface IBadgeProps {
   actionsCount?: number;
   amount: number | string;
   icon: string | StaticImport;
+  className?: string;
 }
 
 const Badge: React.FC<IBadgeProps> = ({
@@ -18,6 +19,7 @@ const Badge: React.FC<IBadgeProps> = ({
   actionsCount = 0,
   amount,
   icon,
+  className
 }) => {
   const amountFormatted = state === "multi" ? `${amount}x` : `${amount} Points`;
 
@@ -25,7 +27,7 @@ const Badge: React.FC<IBadgeProps> = ({
     <section
       className={clsx(
         "w-[178px] bg-elevation-3 rounded-xl border overflow-hidden",
-        earned ? "border-success" : "border-transparent"
+        earned ? "border-success" : "border-transparent", className
       )}>
       <header className="flex justify-between px-3 text-xs leading-8 bg-elevation-2">
         <span>{title}</span>

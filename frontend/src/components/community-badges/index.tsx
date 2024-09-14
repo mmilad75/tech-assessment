@@ -15,10 +15,10 @@ const CommunityBadges: React.FC<ICommunityBadgesProps> = ({
         <h2>{title}</h2>
       </header>
       <div className="flex pt-4 pb-2 bg-elevation-1 rounded-b-xl">
-        <div className="flex overflow-auto pb-6 mb-4">
+        <div className="flex md:overflow-auto md:flex-nowrap flex-wrap pb-4">
           {badges.map((badge, index) => (
             <div key={index} className="flex-shrink-0 mr-4">
-              <Badge {...badge} />
+              <Badge className="mb-5" {...badge} />
             </div>
           ))}
         </div>
