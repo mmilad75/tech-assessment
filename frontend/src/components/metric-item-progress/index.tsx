@@ -22,7 +22,7 @@ const MetricItemProgress: React.FC<IMetricItemProgressProps> = ({
   }, 0);
 
   return (
-    <section className="text-sm w-fit">
+    <section className="text-sm w-full">
       <header className="flex justify-between">
         <div>
           <span className="text-text-primary font-semibold">How to Earn:</span>

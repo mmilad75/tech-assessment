@@ -15,7 +15,7 @@ interface IBadgesCarouselProps {
 }
 
 const BadgesCarousel: React.FC<IBadgesCarouselProps> = ({ badges }) => {
-  let sliderRef = useRef<Slider>(null);
+  const sliderRef = useRef<Slider>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [distances, setDistances] = useState<number[]>([]);
 
