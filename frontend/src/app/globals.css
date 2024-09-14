@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --font-inter: 'Inter', sans-serif;
   --color-primary: #006258;
   --color-primary-hover: #3e8f77;
   --color-primary-disabled: rgba(62, 143, 119, 0.2);
