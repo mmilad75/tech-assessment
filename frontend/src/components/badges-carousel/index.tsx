@@ -1,6 +1,6 @@
 "use client";
 import Slider from "react-slick";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import BadgesCarouselItem, {
   IBadgesCarouselItem,
 } from "./badges-carousel-item";
@@ -15,6 +15,7 @@ interface IBadgesCarouselProps {
 }
 
 const BadgesCarousel: React.FC<IBadgesCarouselProps> = ({ badges }) => {
+  let sliderRef = useRef<Slider>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [distances, setDistances] = useState<number[]>([]);
 
@@ -37,6 +38,7 @@ const BadgesCarousel: React.FC<IBadgesCarouselProps> = ({ badges }) => {
   return (
     <div className="badges-carousel slider-container">
       <Slider
+        ref={sliderRef}
         {...settings}
         beforeChange={(_, next) => setCurrentSlide(next)}
         nextArrow={<BadgesCarouselNavButton type="next" />}
@@ -48,6 +50,7 @@ const BadgesCarousel: React.FC<IBadgesCarouselProps> = ({ badges }) => {
               badge={badge}
               isActive={index === currentSlide}
               distance={distances[index]}
+              onClick={() => sliderRef.current?.slickGoTo(index)}
             />
           </div>
         ))}

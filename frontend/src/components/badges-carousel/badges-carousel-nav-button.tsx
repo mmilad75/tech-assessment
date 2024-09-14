@@ -18,7 +18,7 @@ const BadgesCarouselNavButton: React.FC<IBadgesCarouselNavButtonProps> = ({
         "absolute top-0 bottom-0 z-50",
         "flex items-center",
         "bg-elevation-3 text-text-button",
-        "rounded-button p-4 pointer",
+        "rounded-button p-4",
         {
           "right-0": type === "next",
           "left-0": type === "prev",

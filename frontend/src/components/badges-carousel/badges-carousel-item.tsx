@@ -10,14 +10,16 @@ export interface IBadgesCarouselItemProps {
   badge: IBadgesCarouselItem;
   isActive?: boolean;
   distance?: number;
+  onClick?: () => void;
 }
 const BadgesCarouselItem: React.FC<IBadgesCarouselItemProps> = ({
   badge,
   isActive = false,
   distance = 1,
+  onClick,
 }) => {
   return (
-    <div className="h-full flex items-center">
+    <div className="h-full flex items-center cursor-pointer" onClick={onClick}>
       {isActive ? (
         <BadgesCarouselItemActive {...badge} />
       ) : (
