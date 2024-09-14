@@ -4,7 +4,12 @@ import { IActivityItem } from ".";
 import Link from "next/link";
 import LinkIcon from "../../assets/icons/link.svg";
 
-const LastActivitiesTransaction: React.FC<IActivityItem> = ({
+type LastActivitiesTransactionProps = Pick<
+  IActivityItem,
+  "transactionId" | "link"
+>;
+
+const LastActivitiesTransaction: React.FC<LastActivitiesTransactionProps> = ({
   transactionId = "",
   link = "",
 }) => {

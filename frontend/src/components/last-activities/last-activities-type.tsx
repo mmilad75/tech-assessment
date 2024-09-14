@@ -3,7 +3,9 @@ import TransactionIcon from "@/assets/icons/transaction.svg";
 import BridgedIcon from "@/assets/icons/bridge.svg";
 import { IActivityItem } from ".";
 
-const LastActivitiesType: React.FC<IActivityItem> = ({ type }) => {
+type LastActivitiesTypeProps = Pick<IActivityItem, "type">;
+
+const LastActivitiesType: React.FC<LastActivitiesTypeProps> = ({ type }) => {
   const Icon = useMemo(
     () => (type === "transaction" ? TransactionIcon : BridgedIcon),
     [type]

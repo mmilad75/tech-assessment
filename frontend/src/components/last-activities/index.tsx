@@ -24,22 +24,22 @@ const LastActivities: React.FC<ILastActivitiesProps> = ({
     {
       title: "Activities",
       dataIndex: "type",
-      render: (type) => <LastActivitiesType type={type} />,
+      render: ({ type }) => <LastActivitiesType type={type} />,
     },
     {
       title: "Points",
       dataIndex: "points",
-      render: (points) => <LastActivitiesPoints points={points} />,
+      render: ({ points }) => <LastActivitiesPoints points={points} />,
     },
     {
       title: "Date",
       dataIndex: "date",
-      render: (date) => <LastActivitiesDate date={date} />,
+      render: ({ date }) => <LastActivitiesDate date={date} />,
     },
     {
       title: "TXID",
       dataIndex: "transactionId",
-      render: (transactionId, { link }) => (
+      render: ({ transactionId, link }) => (
         <LastActivitiesTransaction transactionId={transactionId} link={link} />
       ),
     },

@@ -6,7 +6,7 @@ export interface ITableColumn<T> {
   title: string;
   dataIndex: keyof T;
   key?: string;
-  render?: (value: T[keyof T], record: T) => ReactNode;
+  render?: (record: T) => ReactNode;
   width?: string | number;
 }
 
@@ -45,7 +45,7 @@ const Table = <T,>({ columns, dataSource, loading = true }: ITableProps<T>) => {
                   {loading ? (
                     <Loading />
                   ) : column.render ? (
-                    column.render(record[column.dataIndex], record)
+                    column.render(record)
                   ) : (
                     (record[column.dataIndex] as ReactNode)
                   )}

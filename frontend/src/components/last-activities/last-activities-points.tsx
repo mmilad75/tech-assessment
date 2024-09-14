@@ -1,7 +1,11 @@
 import { IActivityItem } from ".";
 import Tag from "../tag";
 
-const LastActivitiesPoints: React.FC<IActivityItem> = ({ points }) => {
+type LastActivitiesPointsProps = Pick<IActivityItem, "points">;
+
+const LastActivitiesPoints: React.FC<LastActivitiesPointsProps> = ({
+  points,
+}) => {
   return <Tag variant="success">+{points}</Tag>;
 };
 

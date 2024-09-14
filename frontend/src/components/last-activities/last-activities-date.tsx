@@ -1,7 +1,9 @@
 import { IActivityItem } from ".";
 import useTimeDate from "@/hooks/use-time-date";
 
-const LastActivitiesDate: React.FC<IActivityItem> = ({ date }) => {
+type LastActivitiesDateProps = Pick<IActivityItem, "date">;
+
+const LastActivitiesDate: React.FC<LastActivitiesDateProps> = ({ date }) => {
   const { formattedDate, formattedTime } = useTimeDate(date);
 
   return (
