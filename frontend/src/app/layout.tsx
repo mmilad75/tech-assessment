@@ -4,6 +4,7 @@ import { interFont } from "@/fonts";
 import HeaderNav from "@/components/header-nav";
 import Footer from "@/components/footer";
 import {
+  footerLinks,
   headerHelpButton,
   headerTabs,
   profileButton,
@@ -36,7 +37,7 @@ export default function RootLayout({
             />
             <MobileNav tabs={headerTabs} />
             <main className="my-8">{children}</main>
-            <Footer socialMedia={socialMedia} />
+            <Footer socialMedia={socialMedia} links={footerLinks} />
           </ThemeProvider>
         </ApolloClientProvider>
       </body>

@@ -10,6 +10,7 @@ import { IBadgesCarouselItem } from "@/components/badges-carousel/badges-carouse
 import { IMetricItemProgressProps } from "@/components/metric-item-progress";
 import { IBadgeProps } from "@/components/badge";
 import { IActivityItem } from "@/components/last-activities";
+import { IFooterLink } from "@/components/footer";
 
 export const headerTabs: ITabButtonProps[] = [
   { text: "Dashboard", link: "" },
@@ -255,5 +256,24 @@ export const communityBadges: IBadgeProps[] = [
     actionsCount: 3,
     amount: 1.15,
     icon: BadgeIcon,
+  },
+];
+
+export const footerLinks: IFooterLink[] = [
+  {
+    title: "Docs",
+    href: "#",
+  },
+  {
+    title: "Blog",
+    href: "#",
+  },
+  {
+    title: "Support",
+    href: "#",
+  },
+  {
+    title: "Terms & Conditions",
+    href: "#",
   },
 ];
