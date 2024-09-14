@@ -51,7 +51,7 @@ const MetricItemProgress: React.FC<IMetricItemProgressProps> = ({
               key={index}
             >
               <MetricItem
-                className="h-full"
+                className="h-full w-full"
                 title={action.title}
                 actionCard={action.actionCard}
               />
