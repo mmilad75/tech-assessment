@@ -6,7 +6,7 @@ export interface IBadgeProps {
   state: "multi" | "points";
   earned: boolean
   title: string;
-  actionsCount: number;
+  actionsCount?: number;
   amount: number | string;
   icon: string | StaticImport;
 }
@@ -15,7 +15,7 @@ const Badge: React.FC<IBadgeProps> = ({
   state = 'multi',
   earned = true,
   title,
-  actionsCount,
+  actionsCount = 0,
   amount,
   icon,
 }) => {
@@ -30,7 +30,7 @@ const Badge: React.FC<IBadgeProps> = ({
     >
       <header className="flex justify-between px-3 text-xs leading-8 bg-elevation-2">
         <span>{title}</span>
-        <span className="text-text-secondary">{actionsCount} Actions</span>
+        {actionsCount > 0 && <span className="text-text-secondary">{actionsCount} Actions</span>}
       </header>
       <div className="py-6 text-center">
         <Image
