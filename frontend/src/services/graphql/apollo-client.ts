@@ -4,7 +4,7 @@ import { BASE_URL } from './config';
 const httpLink = new HttpLink({
   uri: BASE_URL,
   headers: {
-    'x-hasura-admin-secret': process.env.HASURA_ADMIN_SECRET
+    'x-hasura-admin-secret': process.env.HASURA_ADMIN_SECRET || ''
   }
 });
 
