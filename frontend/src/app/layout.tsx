@@ -1,23 +1,7 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
+import { interFont } from "@/fonts";
 
-const inter = localFont({
-  src: [
-    {
-      path: "./fonts/InterVF.ttf",
-      weight: "100 900",
-      style: "normal",
-    },
-    {
-      path: "./fonts/InterItalicVF.ttf",
-      weight: "100 900",
-      style: "italic",
-    },
-  ],
-  variable: "--font-inter",
-  weight: "variable",
-});
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -31,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans`}>{children}</body>
+      <body className={`${interFont.variable} font-sans`}>{children}</body>
     </html>
   );
 }
