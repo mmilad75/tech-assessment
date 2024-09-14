@@ -5,14 +5,14 @@ export interface IHelpButtonProps {
   link: string;
 }
 
-const HelpButton: React.FC<IHelpButtonProps> = ({text, link}) => {
+const HelpButton: React.FC<IHelpButtonProps> = ({ text, link }) => {
   return (
-    <div className="px-5 py-3 border w-fit rounded-[32px] border-primary-300">
+    <div className="hidden lg:inline-block px-5 py-3 border w-fit rounded-button border-primary-300">
       <Link href={link} className="content-center text-text-secondary">
         {text}
       </Link>
     </div>
-  )
-}
+  );
+};
 
 export default HelpButton;

@@ -8,7 +8,7 @@ const BadgesPreview: React.FC<IBadgesPreviewProps> = () => {
   return (
     <div>
       <BadgesCarousel badges={badges} />
-      <div className="mb-4 mb-5">
+      <div className="mt-4 mb-5">
         <MetricItemProgress
           actions={badgeProgress.actions}
           totalEarnings={badgeProgress.totalEarnings}

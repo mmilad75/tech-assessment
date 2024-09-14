@@ -11,6 +11,7 @@ import {
 } from "@/server/mock-data";
 
 import "./globals.css";
+import MobileNav from "@/components/mobile-nav";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -33,6 +34,7 @@ export default function RootLayout({
             helpButton={headerHelpButton}
             profileButton={profileButton}
           />
+          <MobileNav tabs={headerTabs} />
           <main className="my-8">{children}</main>
           <Footer socialMedia={socialMedia} />
         </ThemeProvider>

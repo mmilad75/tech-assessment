@@ -18,7 +18,7 @@ const HeaderNav: React.FC<IHeaderNavProps> = ({
     <header className="container h-[72px] flex h-ful items-center  justify-between">
       <div className="flex flex-grow items-center">
         <Logo />
-        <nav className="ml-6 flex">
+        <nav className="ml-6 hidden lg:flex items-center">
           {tabs.map((tab, index) => (
             <TabButton key={index} {...tab} />
           ))}
