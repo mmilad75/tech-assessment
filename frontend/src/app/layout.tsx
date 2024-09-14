@@ -3,7 +3,18 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 const inter = localFont({
-  src: "./fonts/InterVF.ttf",
+  src: [
+    {
+      path: "./fonts/InterVF.ttf",
+      weight: "100 900",
+      style: "normal",
+    },
+    {
+      path: "./fonts/InterItalicVF.ttf",
+      weight: "100 900",
+      style: "italic",
+    },
+  ],
   variable: "--font-inter",
   weight: "variable",
 });
