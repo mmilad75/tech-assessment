@@ -19,8 +19,7 @@ const MetricItem: React.FC<IMetricItemProps> = ({
       className={clsx(
         "bg-elevation-2 text-sm rounded-content overflow-hidden w-[384px]",
         className
-      )}
-    >
+      )}>
       <header className="flex justify-between items-center px-5 bg-elevation-3 border-b border-elevation-background">
         <span className="leading-9">Action</span>
         {isCompleted && <Tag variant="success">Completed</Tag>}

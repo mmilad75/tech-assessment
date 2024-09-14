@@ -24,8 +24,7 @@ const Table = <T,>({ columns, dataSource }: ITableProps<T>) => {
               <th
                 key={column.key || (column.dataIndex as string)}
                 className="py-4 px-6 text-left bg-elevation-3 text-text-secondary font-medium"
-                style={{ width: column.width }}
-              >
+                style={{ width: column.width }}>
                 {column.title}
               </th>
             ))}
@@ -38,8 +37,7 @@ const Table = <T,>({ columns, dataSource }: ITableProps<T>) => {
               className={clsx(" border-b border-elevation-background", {
                 "bg-elevation-1": index % 2 === 0,
                 "bg-elevation-2": index % 2 === 1,
-              })}
-            >
+              })}>
               {columns.map((column, index) => (
                 <td className={clsx("px-6 py-5")} key={index}>
                   {column.render

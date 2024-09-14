@@ -48,8 +48,7 @@ const MetricItemProgress: React.FC<IMetricItemProgressProps> = ({
                 "md:w-1/2 xl:w-1/3 2xl:w-1/4",
                 "my-5 md:my-4 md:px-3 "
               )}
-              key={index}
-            >
+              key={index}>
               <MetricItem
                 className="h-full w-full"
                 title={action.title}
@@ -64,8 +63,7 @@ const MetricItemProgress: React.FC<IMetricItemProgressProps> = ({
               key={index}
               className={clsx("flex-grow h-2 bg-elevation-3 rounded-corner", {
                 "bg-primary-500": action.actionCard === "complete",
-              })}
-            ></div>
+              })}></div>
           ))}
         </div>
       </div>

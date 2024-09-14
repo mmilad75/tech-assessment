@@ -16,8 +16,7 @@ const LastActivitiesTransaction: React.FC<IActivityItem> = ({
         <span className="text-sm">{shortenTxId}</span>
         <span
           onClick={() => navigator.clipboard.writeText(transactionId)}
-          className="ml-3 text-xs text-text-secondary px-3 py-2 bg-elevation-3 rounded-corner cursor-pointer"
-        >
+          className="ml-3 text-xs text-text-secondary px-3 py-2 bg-elevation-3 rounded-corner cursor-pointer">
           Copy
         </span>
       </span>

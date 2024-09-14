@@ -1,5 +1,4 @@
 import Image from "next/image";
-import clsx from "clsx";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { useMemo } from "react";
 import { mapDistanceToProps } from "./badges-carousel.config";
@@ -20,13 +19,11 @@ const BadgesCarouselItemInactive: React.FC<
   return (
     <section
       className="flex items-center justify-center mx-auto"
-      style={{ width: config.width }}
-    >
+      style={{ width: config.width }}>
       <div className="w-full">
         <div
           className="bg-elevation-3 rounded-xl mx-auto"
-          style={{ width: config.imageSize, height: config.imageSize }}
-        >
+          style={{ width: config.imageSize, height: config.imageSize }}>
           <Image
             className="rounded-full grayscale w-full h-full"
             src={icon}

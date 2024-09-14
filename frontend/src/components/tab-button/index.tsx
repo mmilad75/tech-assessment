@@ -19,8 +19,7 @@ const TabButton: React.FC<ITabButtonProps> = ({
         "inline-block text-sm px-4 py-[10px] ",
         "hover:text-primary-300 transition-colors transition-300",
         state === "default" ? "text-text-primary" : "text-primary-300"
-      )}
-    >
+      )}>
       {text}
     </Link>
   );

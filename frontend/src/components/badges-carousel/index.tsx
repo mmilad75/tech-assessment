@@ -42,8 +42,7 @@ const BadgesCarousel: React.FC<IBadgesCarouselProps> = ({ badges }) => {
         {...settings}
         beforeChange={(_, next) => setCurrentSlide(next)}
         nextArrow={<BadgesCarouselNavButton type="next" />}
-        prevArrow={<BadgesCarouselNavButton type="prev" />}
-      >
+        prevArrow={<BadgesCarouselNavButton type="prev" />}>
         {badges.map((badge, index) => (
           <div key={index} className="h-full" style={{ width: 178 }}>
             <BadgesCarouselItem

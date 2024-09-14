@@ -26,8 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${interFont.variable} font-sans bg-elevation-background text-secondary`}
-      >
+        className={`${interFont.variable} font-sans bg-elevation-background text-secondary`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <HeaderNav
             tabs={headerTabs}

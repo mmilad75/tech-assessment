@@ -24,8 +24,7 @@ const Tag: React.FC<React.PropsWithChildren<ITagProps>> = ({
         "text-xs font-medium py-2 px-3 rounded-corner",
         variantClassNames[variant],
         className
-      )}
-    >
+      )}>
       {children}
     </span>
   );

@@ -23,8 +23,7 @@ const BadgesCarouselNavButton: React.FC<IBadgesCarouselNavButtonProps> = ({
           "right-0": type === "next",
           "left-0": type === "prev",
         }
-      )}
-    >
+      )}>
       {type === "next" ? <ChevronRight /> : <ChevronLeft />}
     </button>
   );

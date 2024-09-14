@@ -17,8 +17,7 @@ const ProfileButton: React.FC<IProfileButtonProps> = ({
     <div>
       <Link
         className="bg-elevation-3 w-fit flex px-4 py-[10px] rounded-xl"
-        href={link}
-      >
+        href={link}>
         <Image
           className="w-[18px] h-[18px] object-cover rounded-full"
           src={image}
