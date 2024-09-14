@@ -33,7 +33,7 @@ export default function RootLayout({
             helpButton={headerHelpButton}
             profileButton={profileButton}
           />
-          <main>{children}</main>
+          <main className="my-8">{children}</main>
           <Footer socialMedia={socialMedia} />
         </ThemeProvider>
       </body>
