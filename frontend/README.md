@@ -2,7 +2,12 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, install the dependecies by running:
+Before trying to run the app, create a .env file in the frontend folder and add the secret key like this:
+```
+NEXT_PUBLIC_HASURA_ADMIN_SECRET='<your-hasura-admin-secret>'
+```
+
+Now, install the dependecies by running:
 ```
 npm install
 ```
