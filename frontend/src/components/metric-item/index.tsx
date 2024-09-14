@@ -1,18 +1,27 @@
+import clsx from "clsx";
+
 interface IMetricItemProps {
   title: string;
   actionCard?: "default" | "complete";
+  className?: string;
 }
 
 const MetricItem: React.FC<IMetricItemProps> = ({
   actionCard = "default",
   title,
+  className,
 }) => {
   const isCompleted = actionCard === "complete";
 
   return (
-    <section className="bg-elevation-2 text-sm rounded-content overflow-hidden">
-      <header className="flex justify-between items-center px-5 py-3 bg-elevation-3 border-b border-elevation-background">
-        <span>Action</span>
+    <section
+      className={clsx(
+        "bg-elevation-2 text-sm rounded-content overflow-hidden",
+        className
+      )}
+    >
+      <header className="flex justify-between items-center px-5 bg-elevation-3 border-b border-elevation-background">
+        <span className="leading-9">Action</span>
         {isCompleted && (
           <span className="bg-success-elevation1 text-success rounded-corner px-3 py-2 text-xs">
             Completed
