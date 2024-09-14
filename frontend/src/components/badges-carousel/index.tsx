@@ -8,6 +8,7 @@ import { settings } from "./badges-carousel.config";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import BadgesCarouselNavButton from "./badges-carousel-nav-button";
 
 interface IBadgesCarouselProps {
   badges: IBadgesCarouselItem[];
@@ -35,7 +36,12 @@ const BadgesCarousel: React.FC<IBadgesCarouselProps> = ({ badges }) => {
 
   return (
     <div className="badges-carousel slider-container">
-      <Slider {...settings} beforeChange={(_, next) => setCurrentSlide(next)}>
+      <Slider
+        {...settings}
+        beforeChange={(_, next) => setCurrentSlide(next)}
+        nextArrow={<BadgesCarouselNavButton type="next" />}
+        prevArrow={<BadgesCarouselNavButton type="prev" />}
+      >
         {badges.map((badge, index) => (
           <div key={index} className="h-full" style={{ width: 178 }}>
             <BadgesCarouselItem
