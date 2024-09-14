@@ -19,9 +19,9 @@ export const Default: Story = {
       { text: "Connections", link: "" },
     ],
     helpButton: { text: "How It Works", link: "#" },
-    profileButton: {
-      text: "bongo.eth",
-      image: UserProfileImage,
+    user: {
+      username: "bongo.eth",
+      avatar: UserProfileImage,
     },
   },
 };

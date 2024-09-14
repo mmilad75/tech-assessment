@@ -4,10 +4,10 @@ import { interFont } from "@/fonts";
 import HeaderNav from "@/components/header-nav";
 import Footer from "@/components/footer";
 import {
+  currentUser,
   footerLinks,
   headerHelpButton,
   headerTabs,
-  profileButton,
   socialMedia,
 } from "@/server/mock-data";
 import "./globals.css";
@@ -33,7 +33,7 @@ export default function RootLayout({
             <HeaderNav
               tabs={headerTabs}
               helpButton={headerHelpButton}
-              profileButton={profileButton}
+              user={currentUser}
             />
             <MobileNav tabs={headerTabs} />
             <main className="my-8">{children}</main>

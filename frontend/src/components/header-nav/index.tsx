@@ -1,21 +1,17 @@
 import HelpButton, { IHelpButtonProps } from "../help-button";
 import Logo from "../logo";
-import ProfileButton, { IProfileButtonProps } from "../profile-button";
+import ProfileMenu, { IUser } from "../profile-menu";
 import TabButton, { ITabButtonProps } from "../tab-button";
 import MenuIcon from "@/assets/icons/menu.svg";
 export interface IHeaderNavProps {
   tabs: ITabButtonProps[];
   helpButton: IHelpButtonProps;
-  profileButton: IProfileButtonProps;
+  user: IUser;
 }
 
-const HeaderNav: React.FC<IHeaderNavProps> = ({
-  tabs,
-  helpButton,
-  profileButton,
-}) => {
+const HeaderNav: React.FC<IHeaderNavProps> = ({ tabs, helpButton, user }) => {
   return (
-    <header className="container h-[72px] flex h-ful items-center  justify-between">
+    <header className="container h-[72px] flex h-ful items-center justify-between">
       <div className="flex flex-grow items-center">
         <Logo />
         <nav className="ml-6 hidden lg:flex items-center">
@@ -24,9 +20,11 @@ const HeaderNav: React.FC<IHeaderNavProps> = ({
           ))}
         </nav>
       </div>
-      <div className="flex items-center space-x-3">
-        <HelpButton {...helpButton} />
-        <ProfileButton {...profileButton} />
+      <div className="relative flex items-center space-x-3 h-[48px]">
+        <div style={{ marginRight: "150px" }}>
+          <HelpButton {...helpButton} />
+        </div>
+        <ProfileMenu user={user} />
         <div className="lg:hidden cursor-pointer">
           <MenuIcon />
         </div>

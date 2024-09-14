@@ -1,6 +1,5 @@
 import { ITabButtonProps } from "@/components/tab-button";
 import { IHelpButtonProps } from "@/components/help-button";
-import { IProfileButtonProps } from "@/components/profile-button";
 import UserProfileImage from "@/assets/images/user.png";
 import DiscordIcon from "@/assets/icons/discord.svg";
 import XIcon from "@/assets/icons/x.svg";
@@ -11,6 +10,7 @@ import { IMetricItemProgressProps } from "@/components/metric-item-progress";
 import { IBadgeProps } from "@/components/badge";
 import { IActivityItem } from "@/components/last-activities";
 import { IFooterLink } from "@/components/footer";
+import { IUser } from "@/components/profile-menu";
 
 export const headerTabs: ITabButtonProps[] = [
   { text: "Dashboard", link: "" },
@@ -25,9 +25,9 @@ export const headerHelpButton: IHelpButtonProps = {
   link: "#",
 };
 
-export const profileButton: IProfileButtonProps = {
-  text: "bongo.eth",
-  image: UserProfileImage,
+export const currentUser: IUser = {
+  username: "bongo.eth",
+  avatar: UserProfileImage,
 };
 
 export const socialMedia = [
