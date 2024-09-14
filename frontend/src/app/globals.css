@@ -3,21 +3,51 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: #006258;
+  --color-primary-hover: #3e8f77;
+  --color-primary-disabled: rgba(62, 143, 119, 0.2);
+
+  --color-secondary: #000000;
+
+  --color-text-primary: #0c0f0e;
+  --color-text-secondary: #3b3b3b;
+  --color-text-disabled: rgba(171, 175, 180, 0.6);
+  --color-text-button: #ffffff;
+
+  --color-elevation-background: #f9f9f9;
+  --color-elevation-elevation1: #f1f1f1;
+  --color-elevation-elevation2: #e8e8e8;
+  --color-elevation-elevation3: #dfdfdf;
+
+  --color-success: #28a745;
+  --color-success-elevation1: rgba(40, 167, 70, 0.25);
+  --color-success-elevation2: rgba(40, 167, 70, 0.5);
+  --color-error: #f44336;
+  --color-warning: #ffc107;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+.dark {
+  --color-primary: #006258;
+  --color-primary-hover: #8ab7b2;
+  --color-primary-disabled: rgba(0, 98, 88, 0.2);
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  --color-secondary: #ffffff;
+
+  --color-text-primary: #f7f7f8;
+  --color-text-secondary: #abafb4;
+  --color-text-disabled: rgba(171, 175, 180, 0.6);
+  --color-text-button: #ffffff;
+
+  --color-elevation-background: #080a0b;
+  --color-elevation-elevation1: #0c0e10;
+  --color-elevation-elevation2: #111315;
+  --color-elevation-elevation3: #16181a;
+
+  --color-success: #27d17f;
+  --color-success-elevation1: rgba(39, 209, 127, 0.1);
+  --color-success-elevation2: rgba(39, 209, 127, 0.5);
+  --color-error: #f44336;
+  --color-warning: #ffc107;
 }
 
 @layer utilities {

@@ -15,7 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${interFont.variable} font-sans`}>{children}</body>
+      <body
+        className={`${interFont.variable} font-sans bg-elevation-background text-secondary`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
