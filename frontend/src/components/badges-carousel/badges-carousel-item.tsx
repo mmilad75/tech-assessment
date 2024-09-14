@@ -1,6 +1,6 @@
 import { IBadgeProps } from "../badge";
 import BadgesCarouselItemInactive from "./badges-carousel-item-inactive";
-import BadgesCarouselItemActive from "./badges-carousel-item-actinve";
+import BadgesCarouselItemActive from "./badges-carousel-item-active";
 
 export interface IBadgesCarouselItem extends IBadgeProps {
   rewardDetails?: string;
