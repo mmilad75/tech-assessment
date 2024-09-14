@@ -1,8 +1,31 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { interFont } from "@/fonts";
+import HeaderNav from "@/components/header-nav";
+import { ITabButtonProps } from "@/components/tab-button";
+import { IHelpButtonProps } from "@/components/help-button";
+import { IProfileButtonProps } from "@/components/profile-button";
+import UserProfileImage from "@/assets/images/user.png";
 
 import "./globals.css";
+
+const headerTabs: ITabButtonProps[] = [
+  { text: "Dashboard", link: "" },
+  { text: "Tasks", link: "" },
+  { text: "Badges", link: "", state: "active" },
+  { text: "Leaderboard", link: "" },
+  { text: "Connections", link: "" },
+];
+
+const headerHelpButton: IHelpButtonProps = {
+  text: "How It Works",
+  link: "#",
+};
+
+const profileButton: IProfileButtonProps = {
+  text: "bongo.eth",
+  image: UserProfileImage,
+};
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,6 +43,11 @@ export default function RootLayout({
         className={`${interFont.variable} font-sans bg-elevation-background text-secondary`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <HeaderNav
+            tabs={headerTabs}
+            helpButton={headerHelpButton}
+            profileButton={profileButton}
+          />
           {children}
         </ThemeProvider>
       </body>

@@ -1,17 +1,16 @@
 import Link from "next/link";
 
-export interface ILogoProps {
-  text: string
-}
-
-const Logo: React.FC<ILogoProps> = ({text}) => {
+const Logo: React.FC = () => {
   return (
     <div className="px-3 flex bg-white">
-      <Link href='' className="rounded-lg font-medium border h-[32px] w-[122px] text-center content-center">
-        {text}
+      <Link
+        href=""
+        className="rounded-lg font-medium border h-[32px] w-[122px] text-center content-center"
+      >
+        Logo
       </Link>
     </div>
-  )
+  );
 };
 
 export default Logo;
