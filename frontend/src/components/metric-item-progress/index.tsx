@@ -23,18 +23,18 @@ const MetricItemProgress: React.FC<IMetricItemProgressProps> = ({
 
   return (
     <section className="text-sm w-full">
-      <header className="flex justify-between">
+      <header className="flex justify-between md:flex-row flex-col">
         <div>
           <span className="text-text-primary font-semibold">How to Earn:</span>
           <span className="text-text-secondary ml-2">
             Complete the actions for the badge, no specific order needed.
           </span>
         </div>
-        <div>
-          <Tag variant="secondary">
+        <div className="flex md:mt-0 mt-3">
+          <Tag className="flex-1 md:flex-auto text-center" variant="secondary">
             {completedCount}/{actions.length} completed
           </Tag>
-          <Tag variant="primary" className="ml-3">
+          <Tag variant="primary" className="ml-3 flex-1 md:flex-auto text-center">
             Total Earnings: {totalEarningsFormatted}
           </Tag>
         </div>

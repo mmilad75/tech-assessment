@@ -9,6 +9,10 @@ const config: Config = {
   theme: {
     container: {
       center: true,
+      padding: {
+        DEFAULT: '1rem',
+        md: '0rem',
+      },
     },
     colors: {
       transparent: "transparent",
