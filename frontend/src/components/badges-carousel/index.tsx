@@ -44,7 +44,7 @@ const BadgesCarousel: React.FC<IBadgesCarousel> = ({}) => {
         >
           <Badge
             state="multi"
-            earned="no"
+            earned={false}
             title="test 1"
             actionsCount={3}
             amount={1.15}
@@ -52,7 +52,7 @@ const BadgesCarousel: React.FC<IBadgesCarousel> = ({}) => {
           />
           <Badge
             state="multi"
-            earned="no"
+            earned={false}
             title="test 2"
             actionsCount={3}
             amount={1.15}
@@ -60,7 +60,7 @@ const BadgesCarousel: React.FC<IBadgesCarousel> = ({}) => {
           />
           <Badge
             state="multi"
-            earned="no"
+            earned={false}
             title="test 3"
             actionsCount={3}
             amount={1.15}
@@ -68,7 +68,7 @@ const BadgesCarousel: React.FC<IBadgesCarousel> = ({}) => {
           />
           <Badge
             state="multi"
-            earned="no"
+            earned={false}
             title="test 4"
             actionsCount={3}
             amount={1.15}
@@ -76,7 +76,7 @@ const BadgesCarousel: React.FC<IBadgesCarousel> = ({}) => {
           />
           <Badge
             state="multi"
-            earned="no"
+            earned={false}
             title="test 5"
             actionsCount={3}
             amount={1.15}
@@ -84,7 +84,7 @@ const BadgesCarousel: React.FC<IBadgesCarousel> = ({}) => {
           />
           <Badge
             state="multi"
-            earned="no"
+            earned={false}
             title="test 6"
             actionsCount={3}
             amount={1.15}
