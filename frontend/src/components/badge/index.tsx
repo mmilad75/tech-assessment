@@ -4,7 +4,7 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 export interface IBadgeProps {
   state: "multi" | "points";
-  earned: boolean
+  earned: boolean;
   title: string;
   actionsCount?: number;
   amount: number | string;
@@ -12,7 +12,7 @@ export interface IBadgeProps {
 }
 
 const Badge: React.FC<IBadgeProps> = ({
-  state = 'multi',
+  state = "multi",
   earned = true,
   title,
   actionsCount = 0,
@@ -30,14 +30,13 @@ const Badge: React.FC<IBadgeProps> = ({
     >
       <header className="flex justify-between px-3 text-xs leading-8 bg-elevation-2">
         <span>{title}</span>
-        {actionsCount > 0 && <span className="text-text-secondary">{actionsCount} Actions</span>}
+        {actionsCount > 0 && (
+          <span className="text-text-secondary">{actionsCount} Actions</span>
+        )}
       </header>
-      <div className="py-6 text-center">
+      <div className="py-6">
         <Image
-          className={clsx(
-            "inline-block rounded-full",
-            !earned && "grayscale"
-          )}
+          className={clsx("rounded-full mx-auto", !earned && "grayscale")}
           src={icon}
           alt={title}
           height={64}

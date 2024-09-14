@@ -1,99 +1,51 @@
 "use client";
-import Carousel from "react-multi-carousel";
-import Badge from "../badge";
-import BadgeIcon from "@/assets/images/badge1.png";
-import "react-multi-carousel/lib/styles.css";
-import { useRef } from "react";
+import Slider from "react-slick";
+import { useEffect, useState } from "react";
+import BadgesCarouselItem, {
+  IBadgesCarouselItem,
+} from "./badges-carousel-item";
+import { settings } from "./badges-carousel.config";
 
-interface IBadgesCarousel {
-  badges: string[];
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+interface IBadgesCarouselProps {
+  badges: IBadgesCarouselItem[];
 }
 
-const BadgesCarousel: React.FC<IBadgesCarousel> = ({}) => {
-  const carouselRef = useRef(null);
+const BadgesCarousel: React.FC<IBadgesCarouselProps> = ({ badges }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [distances, setDistances] = useState<number[]>([]);
 
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 7,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 5,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  };
+  useEffect(() => {
+    const calculateSlideDistances = (
+      totalSlides: number,
+      currentIndex: number
+    ) => {
+      return Array.from({ length: totalSlides }, (_, i) => {
+        const forwardDistance = Math.abs(i - currentIndex);
+        const backwardDistance = totalSlides - forwardDistance;
+        return Math.min(forwardDistance, backwardDistance, 3);
+      });
+    };
+
+    const newDistances = calculateSlideDistances(badges.length, currentSlide);
+    setDistances(newDistances);
+  }, [currentSlide, badges.length]);
 
   return (
-    <div className="relative">
-      <div onClick={() => carouselRef.current?.previous()}>prev</div>
-      <div className="mx-9">
-        <Carousel
-          ref={carouselRef}
-          responsive={responsive}
-          arrows={false}
-          centerMode
-          infinite
-        >
-          <Badge
-            state="multi"
-            earned={false}
-            title="test 1"
-            actionsCount={3}
-            amount={1.15}
-            icon={BadgeIcon}
-          />
-          <Badge
-            state="multi"
-            earned={false}
-            title="test 2"
-            actionsCount={3}
-            amount={1.15}
-            icon={BadgeIcon}
-          />
-          <Badge
-            state="multi"
-            earned={false}
-            title="test 3"
-            actionsCount={3}
-            amount={1.15}
-            icon={BadgeIcon}
-          />
-          <Badge
-            state="multi"
-            earned={false}
-            title="test 4"
-            actionsCount={3}
-            amount={1.15}
-            icon={BadgeIcon}
-          />
-          <Badge
-            state="multi"
-            earned={false}
-            title="test 5"
-            actionsCount={3}
-            amount={1.15}
-            icon={BadgeIcon}
-          />
-          <Badge
-            state="multi"
-            earned={false}
-            title="test 6"
-            actionsCount={3}
-            amount={1.15}
-            icon={BadgeIcon}
-          />
-        </Carousel>
-      </div>
-
-      <div onClick={() => carouselRef.current?.next()}>next</div>
+    <div className="badges-carousel slider-container">
+      <Slider {...settings} beforeChange={(_, next) => setCurrentSlide(next)}>
+        {badges.map((badge, index) => (
+          <div key={index} className="h-full" style={{ width: 178 }}>
+            <BadgesCarouselItem
+              badge={badge}
+              isActive={index === currentSlide}
+              distance={distances[index]}
+            />
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 };

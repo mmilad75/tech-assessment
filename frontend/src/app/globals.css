@@ -65,3 +65,15 @@
   );
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+.badges-carousel .slick-track {
+  display: flex !important;
+}
+
+.badges-carousel .slick-slide {
+  height: auto;
+}
+
+.badges-carousel .slick-slide > div {
+  height: 100%;
+}
