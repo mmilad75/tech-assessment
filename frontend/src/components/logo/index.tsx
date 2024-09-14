@@ -5,7 +5,7 @@ const Logo: React.FC = () => {
     <div className="px-3 flex bg-white">
       <Link
         href=""
-        className="rounded-lg font-medium border h-[32px] w-[122px] text-center content-center"
+        className="logo rounded-lg font-medium border h-[32px] w-[122px] text-center content-center"
       >
         Logo
       </Link>

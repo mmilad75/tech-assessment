@@ -57,6 +57,11 @@
   }
 }
 
+.logo {
+  border-color: rgba(39, 209, 127, 0.1);
+  background-color: rgb(255, 255, 255, 0.05);
+}
+
 .bg-brand-gradient {
   background: linear-gradient(
     90deg,
