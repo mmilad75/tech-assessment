@@ -1,6 +1,7 @@
 import { IBadgeProgressItem } from "@/types";
 import MetricItem from "../metric-item";
 import clsx from "clsx";
+import Tag from "../tag";
 
 interface IBadgeProgressProps {
   actions: Array<IBadgeProgressItem>;
@@ -31,12 +32,12 @@ const BadgeProgress: React.FC<IBadgeProgressProps> = ({
           </span>
         </div>
         <div>
-          <span className="text-xs font-medium bg-elevation-3 text-text-secondary py-2 px-3 rounded-corner">
+          <Tag variant="secondary">
             {completedCount}/{actions.length} completed
-          </span>
-          <span className="text-xs font-medium bg-primary-100 text-primary-300 py-2 px-3 rounded-corner ml-3">
+          </Tag>
+          <Tag variant="primary" className="ml-3">
             Total Earnings: {totalEarningsFormatted}
-          </span>
+          </Tag>
         </div>
       </header>
       <div>
