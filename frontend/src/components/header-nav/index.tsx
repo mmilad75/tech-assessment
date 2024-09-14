@@ -2,7 +2,7 @@ import HelpButton, { IHelpButtonProps } from "../help-button";
 import Logo from "../logo";
 import ProfileButton, { IProfileButtonProps } from "../profile-button";
 import TabButton, { ITabButtonProps } from "../tab-button";
-
+import MenuIcon from "@/assets/icons/menu.svg";
 export interface IHeaderNavProps {
   tabs: ITabButtonProps[];
   helpButton: IHelpButtonProps;
@@ -24,9 +24,12 @@ const HeaderNav: React.FC<IHeaderNavProps> = ({
           ))}
         </nav>
       </div>
-      <div className="flex space-x-3">
+      <div className="flex items-center space-x-3">
         <HelpButton {...helpButton} />
         <ProfileButton {...profileButton} />
+        <div className="lg:hidden cursor-pointer">
+          <MenuIcon />
+        </div>
       </div>
     </header>
   );
