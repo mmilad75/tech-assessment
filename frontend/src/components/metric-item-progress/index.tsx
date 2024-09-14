@@ -1,14 +1,13 @@
-import { IBadgeProgressItem } from "@/types";
-import MetricItem from "../metric-item";
+import MetricItem, { IMetricItemProps } from "../metric-item";
 import clsx from "clsx";
 import Tag from "../tag";
 
-interface IBadgeProgressProps {
-  actions: Array<IBadgeProgressItem>;
+export interface IMetricItemProgressProps {
+  actions: Array<IMetricItemProps>;
   totalEarnings: string | number;
 }
 
-const BadgeProgress: React.FC<IBadgeProgressProps> = ({
+const MetricItemProgress: React.FC<IMetricItemProgressProps> = ({
   actions,
   totalEarnings,
 }) => {
@@ -23,7 +22,7 @@ const BadgeProgress: React.FC<IBadgeProgressProps> = ({
   }, 0);
 
   return (
-    <section className="text-sm">
+    <section className="text-sm w-fit">
       <header className="flex justify-between">
         <div>
           <span className="text-text-primary font-semibold">How to Earn:</span>
@@ -74,4 +73,4 @@ const BadgeProgress: React.FC<IBadgeProgressProps> = ({
   );
 };
 
-export default BadgeProgress;
+export default MetricItemProgress;

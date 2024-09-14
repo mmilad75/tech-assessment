@@ -2,9 +2,9 @@ import Image from "next/image";
 import clsx from "clsx";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
-interface IBadgeProps {
+export interface IBadgeProps {
   state: "multi" | "points";
-  earned: "yes" | "no";
+  earned: boolean
   title: string;
   actionsCount: number;
   amount: number | string;
@@ -12,21 +12,20 @@ interface IBadgeProps {
 }
 
 const Badge: React.FC<IBadgeProps> = ({
-  state,
-  earned,
+  state = 'multi',
+  earned = true,
   title,
   actionsCount,
   amount,
   icon,
 }) => {
-  const isEarned = earned === "yes";
   const amountFormatted = state === "multi" ? `${amount}x` : `${amount} Points`;
 
   return (
     <section
       className={clsx(
         "w-[178px] bg-elevation-3 rounded-xl border overflow-hidden",
-        isEarned ? "border-success" : "border-transparent"
+        earned ? "border-success" : "border-transparent"
       )}
     >
       <header className="flex justify-between px-3 text-xs leading-8 bg-elevation-2">
@@ -37,7 +36,7 @@ const Badge: React.FC<IBadgeProps> = ({
         <Image
           className={clsx(
             "inline-block rounded-full",
-            !isEarned && "grayscale"
+            !earned && "grayscale"
           )}
           src={icon}
           alt={title}

@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Tag from "../tag";
 
-interface IMetricItemProps {
+export interface IMetricItemProps {
   title: string;
   actionCard?: "default" | "complete";
   className?: string;
@@ -17,7 +17,7 @@ const MetricItem: React.FC<IMetricItemProps> = ({
   return (
     <section
       className={clsx(
-        "bg-elevation-2 text-sm rounded-content overflow-hidden",
+        "bg-elevation-2 text-sm rounded-content overflow-hidden w-[384px]",
         className
       )}
     >

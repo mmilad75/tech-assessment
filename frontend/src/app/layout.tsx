@@ -19,7 +19,7 @@ export default function RootLayout({
       <body
         className={`${interFont.variable} font-sans bg-elevation-background text-secondary`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
         </ThemeProvider>
       </body>
