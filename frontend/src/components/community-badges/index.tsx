@@ -15,9 +15,9 @@ const CommunityBadges: React.FC<ICommunityBadgesProps> = ({
         <h2>{title}</h2>
       </header>
       <div className="flex pt-4 pb-2 bg-elevation-1 rounded-b-xl">
-        <div className="flex md:overflow-auto md:flex-nowrap flex-wrap pb-4">
+        <div className="flex md:overflow-auto md:flex-nowrap flex-wrap justify-center md:justify-start pb-4">
           {badges.map((badge, index) => (
-            <div key={index} className="flex-shrink-0 mr-4">
+            <div key={index} className="shrink-0 mr-4">
               <Badge className="mb-5" {...badge} />
             </div>
           ))}
