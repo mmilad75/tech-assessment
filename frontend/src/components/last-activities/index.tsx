@@ -1,8 +1,8 @@
 import Table, { ITableColumn } from "../table";
-import Tag from "../tag";
 import LastActivitiesType from "./last-activities-type";
 import LastActivitiesDate from "./last-activities-date";
 import LastActivitiesTransaction from "./last-activities-transaction";
+import LastActivitiesPoints from "./last-activities-points";
 
 export interface IActivityItem {
   type: "transaction" | "bridged";
@@ -13,9 +13,13 @@ export interface IActivityItem {
 }
 export interface ILastActivitiesProps {
   data: IActivityItem[];
+  loading?: boolean;
 }
 
-const LastActivities: React.FC<ILastActivitiesProps> = ({ data }) => {
+const LastActivities: React.FC<ILastActivitiesProps> = ({
+  data,
+  loading = true,
+}) => {
   const columns: ITableColumn<IActivityItem>[] = [
     {
       title: "Activities",
@@ -25,7 +29,7 @@ const LastActivities: React.FC<ILastActivitiesProps> = ({ data }) => {
     {
       title: "Points",
       dataIndex: "points",
-      render: (points) => <Tag variant="success">+{points}</Tag>,
+      render: (points) => <LastActivitiesPoints points={points} />,
     },
     {
       title: "Date",
@@ -42,7 +46,7 @@ const LastActivities: React.FC<ILastActivitiesProps> = ({ data }) => {
   ];
   return (
     <div>
-      <Table columns={columns} dataSource={data} />
+      <Table loading={loading} columns={columns} dataSource={data} />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { ReactNode } from "react";
+import Loading from "../last-activities/loading";
 
 export interface ITableColumn<T> {
   title: string;
@@ -12,9 +13,10 @@ export interface ITableColumn<T> {
 export interface ITableProps<T> {
   columns: ITableColumn<T>[];
   dataSource: T[];
+  loading: boolean;
 }
 
-const Table = <T,>({ columns, dataSource }: ITableProps<T>) => {
+const Table = <T,>({ columns, dataSource, loading = true }: ITableProps<T>) => {
   return (
     <div className="overflow-x-auto">
       <table className="w-full border-collapse rounded-content overflow-hidden text-xs leading-5">
@@ -40,9 +42,13 @@ const Table = <T,>({ columns, dataSource }: ITableProps<T>) => {
               })}>
               {columns.map((column, index) => (
                 <td className={clsx("px-6 py-5")} key={index}>
-                  {column.render
-                    ? column.render(record[column.dataIndex], record)
-                    : (record[column.dataIndex] as ReactNode)}
+                  {loading ? (
+                    <Loading />
+                  ) : column.render ? (
+                    column.render(record[column.dataIndex], record)
+                  ) : (
+                    (record[column.dataIndex] as ReactNode)
+                  )}
                 </td>
               ))}
             </tr>

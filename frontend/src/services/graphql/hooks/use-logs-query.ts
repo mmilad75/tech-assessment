@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import { GET_LOGS_QUERY } from "../schema/query";
+import { GET_LOGS_QUERY, LOGS_QUERY_LIMIT } from "../schema/query";
 import { IActivityItem } from "@/components/last-activities";
 import { useQuery } from "@apollo/client";
 
@@ -10,7 +10,7 @@ const useLogsQuery = () => {
   });
 
   const transformedData: IActivityItem[] = useMemo(() => {
-    if (!data || !data.logs) return [];
+    if (!data || !data.logs) return [...Array(LOGS_QUERY_LIMIT)];
 
     return data.logs.map((log: any, index: number) => ({
       date: log.block_timestamp,
