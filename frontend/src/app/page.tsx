@@ -1,10 +1,14 @@
+"use client";
 import Section from "@/components/section";
 import LastActivities from "@/components/last-activities";
-import { communityBadges, lastActivities } from "@/server/mock-data";
+import { communityBadges } from "@/server/mock-data";
 import BadgesPreview from "@/components/badges-preview";
 import CommunityBadges from "@/components/community-badges";
+import useLogsQuery from "@/services/graphql/hooks/use-logs-query";
 
-export default function Home() {
+const Home: React.FC = () => {
+  const { data: lastActivities } = useLogsQuery();
+
   return (
     <>
       <Section title="Last Activities" className="mb-5">
@@ -16,4 +20,6 @@ export default function Home() {
       </Section>
     </>
   );
-}
+};
+
+export default Home;
