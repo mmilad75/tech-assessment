@@ -1,8 +1,8 @@
-import { Meta, StoryObj } from '@storybook/react';
-import TabButton, { ITabButtonProps } from './index';
+import { Meta, StoryObj } from "@storybook/react";
+import TabButton, { ITabButtonProps } from "./index";
 
 export default {
-  title: 'Components/TabButton',
+  title: "Components/TabButton",
   component: TabButton,
 } as Meta;
 
@@ -12,14 +12,14 @@ export const Default: Story = {
   args: {
     text: "Tasks",
     link: "#",
-    state: 'default'
-  }
+    state: "default",
+  },
 };
 
 export const Active: Story = {
   args: {
     text: "Tasks",
     link: "#",
-    state: 'active'
-  }
+    state: "active",
+  },
 };

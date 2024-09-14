@@ -1,8 +1,8 @@
-import { Meta, StoryObj } from '@storybook/react';
-import Badge, { IBadgeProps } from './index';
+import { Meta, StoryObj } from "@storybook/react";
+import Badge, { IBadgeProps } from "./index";
 
 export default {
-  title: 'Components/Badge',
+  title: "Components/Badge",
   component: Badge,
 } as Meta;
 
@@ -15,9 +15,9 @@ export const MultiEarned: Story = {
     title: "Liquidity Machine",
     actionsCount: 3,
     amount: 1.15,
-    icon: require('../../assets/images/badge1.png')
-  }
-}
+    icon: require("../../assets/images/badge1.png"),
+  },
+};
 
 export const MultiNotEarned: Story = {
   args: {
@@ -26,9 +26,9 @@ export const MultiNotEarned: Story = {
     title: "Liquidity Machine",
     actionsCount: 3,
     amount: 1.15,
-    icon: require('../../assets/images/badge1.png')
-  }
-}
+    icon: require("../../assets/images/badge1.png"),
+  },
+};
 
 export const PointsEarned: Story = {
   args: {
@@ -37,9 +37,9 @@ export const PointsEarned: Story = {
     title: "Liquidity Machine",
     actionsCount: 3,
     amount: 1.15,
-    icon: require('../../assets/images/badge1.png')
-  }
-}
+    icon: require("../../assets/images/badge1.png"),
+  },
+};
 
 export const PointsNotEarned: Story = {
   args: {
@@ -48,6 +48,6 @@ export const PointsNotEarned: Story = {
     title: "Liquidity Machine",
     actionsCount: 3,
     amount: 1.15,
-    icon: require('../../assets/images/badge1.png')
-  }
-}
+    icon: require("../../assets/images/badge1.png"),
+  },
+};
