@@ -13,7 +13,7 @@ const TabButton: React.FC<ITabButtonProps> = ({
   state = 'default'
 }) => {
   return (
-    <div className={clsx("flex px-4 h-[40px] w-fit", state === 'default' ? 'text-text-primary' : 'text-text-primary300')}>
+    <div className={clsx("flex px-4 h-[40px] w-fit", state === 'default' ? 'text-text-primary' : 'text-primary-300')}>
       <Link href={link} className="content-center">
         {text}
       </Link>
