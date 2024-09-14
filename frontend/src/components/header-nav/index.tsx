@@ -15,7 +15,7 @@ const HeaderNav: React.FC<IHeaderNavProps> = ({
   profileButton,
 }) => {
   return (
-    <header className="container h-[72px] flex h-ful items-center px-7 justify-between">
+    <header className="container h-[72px] flex h-ful items-center  justify-between">
       <div className="flex flex-grow items-center">
         <Logo />
         <nav className="ml-6 flex">
